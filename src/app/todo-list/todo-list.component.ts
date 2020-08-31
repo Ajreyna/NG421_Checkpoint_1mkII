@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {ITodo} from '../interfaces/itodo';
 import {TodoService} from '../services/todo.service';
 
