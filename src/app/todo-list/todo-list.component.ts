@@ -1,18 +1,23 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { TodoService } from "../services/todo.service";
-
+import { Component, OnInit, Input } from '@angular/core';
+import {ITodo} from '../interfaces/itodo';
+import {TodoService} from '../services/todo.service';
 
 @Component({
-  selector: "app-todo-list",
-  templateUrl: "./todo-list.component.html",
-  styleUrls: ["./todo-list.component.css"],
+  selector: 'app-todo-list',
+  templateUrl: './todo-list.component.html',
+  styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  @Input() status: [];
-  get todoList() {
+  get todoList(): ITodo[]{
     return this.todoService.getTodos(this.status);
   }
-  constructor(private todoService: TodoService) {}
+  @Input()status: string;
 
-  ngOnInit() {}
+  
+  constructor(private todoService : TodoService) { }
+
+  ngOnInit() {
+    
+  }
+
 }
